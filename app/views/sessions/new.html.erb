@@ -1,0 +1,9 @@
+<h1>Please Log in</h1>
+
+<%= form_tag sessions_path do %>
+
+  <%= label :userid, 'User ID' %><br>
+  <%= text_field :userid, placeholder: 'user id' %><br>
+
+  <%= submit_tag 'Sign in' %>
+<% end %>
