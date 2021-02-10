@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <nav>
+      <h2><%= link_to 'Private-Events', root_path %> </h2>
+      <ul>
+        <li> <%= link_to 'Login', new_user_path %> </li>
+        <li>Sign up</li>
+        <li>userid</li>
+        <li>Sign out</li>
+        <li></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
