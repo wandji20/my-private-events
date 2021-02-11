@@ -14,10 +14,17 @@
     <nav>
       <h2><%= link_to 'Private-Events', root_path %> </h2>
       <ul>
-        <li> <%= link_to 'Login', new_user_path %> </li>
-        <li>Sign up</li>
-        <li>userid</li>
-        <li>Sign out</li>
+        
+        <% if current_user %>
+          <li>Hi <%= current_user.userid %></li>
+          <li><%= link_to 'New Event', new_event_path %></li>
+          <li> <%= link_to 'Sign Out', session_path('active'), method: :delete %> </li>
+        <% else %>
+          <li> <%= link_to 'Login', new_session_path %> </li>
+          <li> <%= link_to 'Sign up', new_user_path %> </li>
+        <% end %>
+
+        
         <li></li>
       </ul>
     </nav>

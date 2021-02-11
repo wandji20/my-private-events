@@ -3,7 +3,7 @@
 <%= form_tag sessions_path do %>
 
   <%= label :userid, 'User ID' %><br>
-  <%= text_field :userid, placeholder: 'user id' %><br>
+  <%= text_field :userid, nil, placeholder: 'user id' %><br>
 
   <%= submit_tag 'Sign in' %>
 <% end %>

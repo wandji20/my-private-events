@@ -1,7 +1,26 @@
-<h1>Welcome</h1>
-<ul>
-  <% @users.each_with_index do |user, index| %>
-    <li><%=  user.userid  %></li>
-  <% end %>
-  
-</ul>
+<div>
+  <h1>Welcome</h1>
+  <div class ='main'>
+    <div>
+      
+    </div>
+
+    <div> 
+      <h2>All Events</h2>
+      <ul>
+        <% @users.each_with_index do |user, index| %>
+          <li><%=  user.userid  %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div>
+      <h2>User Names</h2>
+      <ul>
+        <% @users.each_with_index do |user, index| %>
+          <li><%=  user.name  %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
