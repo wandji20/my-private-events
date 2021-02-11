@@ -1,1 +1,13 @@
-<p> welcome <%= @user.userid %> </p>
+
+<h1>Welcome  <%= @user.userid  %> </h1>
+<h3>Here is a list of all your created events</h3>
+<ul>
+  <% current_user.created_events.each do |event| %>
+    <li>Title:  <%=event.title  %></li>
+    <li>Location:  <%= event.location %></li>
+    <li>Time:  <%= event.time %></li>
+    <li>Date:  <%= event.date %></li>
+    <li>Description:  <%= event.description %></li>
+  <% end %>
+</ul>
+
