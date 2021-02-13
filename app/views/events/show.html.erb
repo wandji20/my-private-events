@@ -1,21 +1,20 @@
-<div class="row">
-  <div class="col-md-4 justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-4 ">
     <h1>Creator: <%= @event.creator.name %></h1>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-4 justify-content-center">
-    <h1>Attendees List</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4 justify-content-center">
-    <ul>
-      <% @event.attendees.each do |attendee| %>
-        <li><%= attendee.name %></li>
-      <% end %>
-      <%=  %>
-    </ul>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4 ">
+      <h1>Attendees List</h1>
+    </div>
+    <div class="col-md-4 ">
+      <ul>
+        <% @event.attendees.each do |attendee| %>
+          <li><%= attendee.name %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

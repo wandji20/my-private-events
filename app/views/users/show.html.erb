@@ -1,16 +1,16 @@
 
 
-<div class="row">
-  <div class="col-md-4 justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-4">
     <h1>Welcome  <%= current_user.userid  %> </h1>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-6">
     <h3>Here is a list of all your upcoming Events</h3>
   </div>
 </div>
-<div class="row">
+<div class="row justify-content-center">
   <% @upcoming_events.each do |event| %>
     <div class="col-md-3">
       <div class="card" style="width: 18rem;">
@@ -28,12 +28,12 @@
   <% end %>
 </div>
 
-<div class="row">
-  <div class="col-md-6 justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-6">
     <h3>Here is a list of all your Previous Events</h3>
   </div>
 </div>
-<div class="row">
+<div class="row justify-content-center">
   <% @previous_events.each do |event| %>
     <div class="col-md-3">
       <div class="card" style="width: 18rem;">
