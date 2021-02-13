@@ -11,23 +11,25 @@
   </head>
 
   <body>
-    <nav>
-      <h2><%= link_to 'Private-Events', root_path %> </h2>
-      <ul>
-        
-        <% if current_user %>
-          <li>Hi <%= link_to current_user.userid, current_user  %></li>
-          <li><%= link_to 'New Event', new_event_path %></li>
-          <li> <%= link_to 'Sign Out', session_path('active'), method: :delete %> </li>
-        <% else %>
-          <li> <%= link_to 'Login', new_session_path %> </li>
-          <li> <%= link_to 'Sign up', new_user_path %> </li>
-        <% end %>
+    <div class="container-fluid">
 
-        
-        <li></li>
-      </ul>
-    </nav>
-    <%= yield %>
+      <div class="row">
+        <nav>
+            <h2><%= link_to 'Private-Events', root_path %> </h2>
+            <ul>              
+              <% if current_user %>
+                <li>Hi <%= link_to current_user.userid, current_user  %></li>
+                <li><%= link_to 'New Event', new_event_path %></li>
+                <li> <%= link_to 'Sign Out', session_path('active'), method: :delete %> </li>
+              <% else %>
+                <li> <%= link_to 'Login', new_session_path %> </li>
+                <li> <%= link_to 'Sign up', new_user_path %> </li>
+              <% end %>              
+              <li></li>
+            </ul>
+          </nav>
+      </div>     
+      <%= yield %>
+    </div>
   </body>
 </html>

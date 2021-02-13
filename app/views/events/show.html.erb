@@ -1,7 +1,21 @@
-<ul>
-  <li> Title: <%= @event.title %></li>
-  <li>Location: <%= @event.location  %></li>
-  <li>Date: <%= @event.date  %></li>
-  <li>Time: <%= @event.time %></li>
-  <li>Description: <%= @event.description  %></li>
-</ul>
+<div class="row">
+  <div class="col-md-4 justify-content-center">
+    <h1>Creator: <%= @event.creator.name %></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 justify-content-center">
+    <h1>Attendees List</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 justify-content-center">
+    <ul>
+      <% @event.attendees.each do |attendee| %>
+        <li><%= attendee.name %></li>
+      <% end %>
+      <%=  %>
+    </ul>
+  </div>
+</div>

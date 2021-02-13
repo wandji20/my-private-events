@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  def index
+    @events = Event.all
+  end
 
   def new
     @event = current_user.created_events.build
@@ -7,7 +10,8 @@ class EventsController < ApplicationController
   def create
     @event = current_user.created_events.build(event_params)
     if @event.save
-      current_user.attended_events << @event.event_id
+      #current_user.attended_events << @event
+      #@event.attendees << current_user
       redirect_to root_path
     else
       render 'new'
