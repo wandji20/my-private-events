@@ -2,16 +2,39 @@
 
 <div class="row">
   <div class="col-md-4 justify-content-center">
-    <h1>Welcome  <%= @user.userid  %> </h1>
+    <h1>Welcome  <%= current_user.userid  %> </h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-6 justify-content-center">
-    <h3>Here is a list of all your Attended Events</h3>
+    <h3>Here is a list of all your upcoming Events</h3>
   </div>
 </div>
 <div class="row">
-  <% current_user.attended_events.each do |event| %>
+  <% @upcoming_events.each do |event| %>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= event.title %></h5>
+          <h4 class="card-title"><%= event.location %></h4>
+          <h3 class="card-title"><%= event.date %></h3>
+          <h3 class="card-title"><%= event.time %></h3>
+          <p class="card-text"><%= event.description %></p>
+          <%= link_to "More Details", event %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-6 justify-content-center">
+    <h3>Here is a list of all your Previous Events</h3>
+  </div>
+</div>
+<div class="row">
+  <% @previous_events.each do |event| %>
     <div class="col-md-3">
       <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
