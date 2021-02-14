@@ -6,24 +6,19 @@ class AttendancesController < ApplicationController
 
   def create
 
-    # event = current_user.attended_events.find_by_id(params[:attended_event_id])
+    event = current_user.attended_events.find_by_id(params[:attended_event_id])
     
-    # if event.nil?
-    #   @attendance = current_user.attendances.build(:attended_event_id => params[:attended_event_id])
-    #   if @attendance.save
-    #     redirect_to root_path
-    #   else
-    #     redirect_to new_event_path
-    #   end
-    # else
-    #   redirect_to root_path
-    # end
-    @attendance = current_user.attendances.build(:attended_event_id => params[:attended_event_id])
-    if @attendance.save
-      redirect_to root_path
+    if event.nil?
+      @attendance = current_user.attendances.build(:attended_event_id => params[:attended_event_id])
+      if @attendance.save
+        redirect_to root_path
+      else
+        redirect_to new_event_path
+      end
     else
-      redirect_to new_event_path
+      redirect_to root_path
     end
+  
   end
 
 end
