@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:show]
+
   def index
     @users = User.all
   end
@@ -27,6 +29,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :userid, :email)
   end
-
+    
+  def require_login
+    unless current_user
+      redirect_to new_session_path
+      flash[:error] = 'Please Login or SignUp'
+    end
+  end
   
 end
