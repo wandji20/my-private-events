@@ -27,13 +27,6 @@ class EventsController < ApplicationController
   end
  
   private
-    
-  def require_login
-    unless current_user
-      redirect_to new_session_path
-      flash[:error] = 'Please Login or SignUp'
-    end
-  end
 
   def event_params
     params.require(:event).permit(:title, :date, :time, :description, :location)
