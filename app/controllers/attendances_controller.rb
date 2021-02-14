@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  before_action :require_login, only: [:create, :new]
   def new 
 
   end
